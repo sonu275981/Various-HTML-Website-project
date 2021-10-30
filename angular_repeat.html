@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<link rel="stylesheet" href="">
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-app="mymod" ng-controller="fame">
+			<select ng-model="pick">
+				
+				<option ng-repeat="x in names">{{x}}</option><br><br><br>
+
+			</select>
+		
+			<p>you selected:- {{pick}}</p><br><br>
+
+			<table border="1" ng-model="jsn">
+				
+				<li ng-repeat="y in cars">{{ "model: " + y.model + " , color " + y.color}}</li><br><br><br>
+
+			</table>
+			<p>your data </p>
+			
+		</div>
+		<script>
+		var meto= angular.module("mymod",[]);
+		meto.controller('fame', function($scope){
+		$scope.names = ["Java", "PHP", ".Net", "AngularJS", "C/C++"];
+		
+		$scope.cars = [
+		{model : "Ford", color : "red"},
+		{model : "Honda", color : "white"},
+		{model : "Volvo", color : "black"},
+		{model : "Hundai", color : "gray"}
+		];
+		
+		})
+		</script>
+		
+	</body>
+</html>
